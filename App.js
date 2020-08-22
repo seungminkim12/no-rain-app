@@ -33,6 +33,7 @@ export default class extends React.Component {
       const {
         coords: { latitude, longitude },
       } = await Location.getCurrentPositionAsync();
+      console.log(latitude, longitude);
       this.getWeather(latitude, longitude);
     } catch (error) {
       Alert.alert("Cant find you.", "So sad");

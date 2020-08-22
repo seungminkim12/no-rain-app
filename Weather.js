@@ -4,17 +4,32 @@ import { StyleSheet, View, Text, StatusBar } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 
-export default function Weather({ temp }) {
+const weatherOptions = {
+  Haze: {
+    iconName: "weather-hail",
+    gradient: ["#4DA0B0", "#D39D38"],
+  },
+  Clouds: {
+    iconName: "weather-cloudy",
+    gradient: ["#4DA0B0", "#D39D38"],
+  },
+  Clear: {
+    iconName: "weather-cloudy",
+    gradient: ["#4DA0B0", "#D39D38"],
+  },
+};
+
+export default function Weather({ temp, condition }) {
   return (
     <LinearGradient
       style={styles.container}
-      colors={["#4c669f", "#eb5598", "#192f6a"]}
+      colors={weatherOptions[condition].gradient}
     >
       <StatusBar barStyle="light-content" />
       <View style={styles.halfContainer}>
         <MaterialCommunityIcons
           size={96}
-          name="weather-lightning-rainy"
+          name={weatherOptions[condition].iconName}
           color="white"
         />
         <Text style={styles.temp}>{temp}º</Text>
