@@ -65,6 +65,12 @@ const weatherOptions = {
     title: "Clear",
     subTitle: "Let's go outside",
   },
+  Smoke: {
+    iconName: "weather-hail",
+    gradient: ["#4DA0B0", "#D39D38"],
+    title: "Clear",
+    subTitle: "Let's go outside",
+  },
 };
 
 export default function Weather({ temp, condition }) {
